@@ -1,0 +1,33 @@
+<form class="searcher" [formGroup]="searchForm">
+  <mat-card class="searcher__card">
+    <mat-form-field class="searcher__form" appearance="fill">
+      <mat-label>Search of repositories</mat-label>
+      <input matInput
+             formControlName="name"
+             type="text"
+             autocomplete="off"
+             placeholder="Enter repository name"
+      >
+    </mat-form-field>
+    <mat-form-field class="searcher__language-filter" appearance="fill">
+      <mat-label>Language</mat-label>
+      <mat-select formControlName="language">
+        <mat-option selected>None</mat-option>
+        <mat-option value="JavaScript">JavaScript</mat-option>
+        <mat-option value="TypeScript">TypeScript</mat-option>
+        <mat-option value="Java">Java</mat-option>
+        <mat-option value="C++">C++</mat-option>
+        <mat-option value="C#">C#</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-progress-bar mode="indeterminate" *ngIf="(isActiveLoader$ | async)">
+    </mat-progress-bar>
+  </mat-card>
+</form>
+<div class="result">
+  <ul class="result__list" *ngIf="(items$ | async) as items">
+    <li class="result__item" *ngFor="let item of items">
+      <repository-card [item]="item"></repository-card>
+    </li>
+  </ul>
+</div>

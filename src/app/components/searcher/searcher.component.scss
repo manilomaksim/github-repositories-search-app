@@ -1,0 +1,27 @@
+.searcher {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  &__card {
+    background-color: #e6eee8;
+  }
+  &__form {
+    margin: 10px;
+  }
+  &__language-filter {
+    margin: 10px;
+  }
+}
+
+.result {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  &__list {
+    list-style-type: none;
+    padding: 0;
+  }
+  &__item {
+    font-style: italic;
+  }
+}

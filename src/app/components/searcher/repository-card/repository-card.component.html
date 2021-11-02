@@ -1,0 +1,19 @@
+<mat-card class="repository-card" *ngIf="item">
+  <mat-card-title>
+    {{item.name}}
+  </mat-card-title>
+  <mat-card-content>
+    <p class="repository-card__description">Description:
+      {{item.description}}
+    </p>
+    <p class="repository-card__language">Language:
+      {{item.language}}
+    </p>
+  </mat-card-content>
+  <mat-divider inset></mat-divider>
+  <mat-card-actions>
+    <a mat-button
+       routerLink="/repositories/{{item.name}}">MORE
+    </a>
+  </mat-card-actions>
+</mat-card>

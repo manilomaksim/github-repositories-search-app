@@ -1,0 +1,31 @@
+<div class="repository">
+  <a mat-button class="repository__back-btn" routerLink="**">
+    <mat-icon class="material-icons-round" aria-hidden="false">arrow_back</mat-icon>Back
+  </a>
+  <mat-card class="repository__card" *ngIf="(item$ | async) as item">
+    <mat-card-title class="repository__title">
+        {{item.full_name}}
+    </mat-card-title>
+    <mat-card-content class="repository__content">
+      <img class="repository__img" src="{{item.owner.avatar_url}}" alt="">
+      <p>Description:
+        {{item.description}}
+      </p>
+      <p>Login:
+        {{item.owner.login}}
+      </p>
+      <p>Forks:
+        {{item.forks}}
+      </p>
+      <p>Watchers:
+        {{item.watchers}}
+      </p>
+    </mat-card-content>
+    <mat-divider inset></mat-divider>
+    <mat-card-actions class="repository__action">
+      <a mat-button
+         href="{{item.html_url}}">LINK
+      </a>
+    </mat-card-actions>
+  </mat-card>
+</div>
